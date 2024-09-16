@@ -33,6 +33,7 @@ require "options"
 require "nvchad.autocmds"
 
 require("mason").setup()
+require('gitsigns').setup()
 require("mason-lspconfig").setup {
     ensure_installed = { "pyright" },
 }
