@@ -1,9 +1,46 @@
-**This repo is supposed to be used as config by NvChad users!**
+# ⚡ NvChad - Configurazione Personale
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+Configurazione Neovim basata su [NvChad](https://nvchad.com) per sviluppo Python e workflow ottimizzato.
 
-# Credits
+## Requisiti
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+- Neovim ≥ 0.9
+- Git, ripgrep, fd
+- Node.js (per LSP)
+- Python 3
+
+## Installazione
+
+```bash
+# Backup configurazione esistente
+mv ~/.config/nvim ~/.config/nvim.backup
+
+# Clone
+git clone <repo-url> ~/.config/nvim
+
+# Avvia Neovim (Lazy installerà automaticamente i plugin)
+nvim
+```
+
+## Struttura
+
+```
+lua/
+├── plugins/          # Plugin organizzati per categoria
+│   ├── ai.lua       # AI assistants
+│   ├── python.lua   # Python dev tools
+│   ├── notebook.lua # Jupyter integration
+│   ├── git.lua      # Git workflow
+│   └── ...
+├── configs/         # Configurazioni LSP, formatter
+├── mappings.lua     # Keymaps personalizzati
+└── options.lua      # Opzioni Neovim
+```
+
+## Keymaps
+
+Vedi [KEYMAP.md](./KEYMAP.md) per la lista completa delle scorciatoie.
+
+---
+
+_Configurazione personale - liberamente ispirata da [LazyVim starter](https://github.com/LazyVim/starter)_
