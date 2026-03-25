@@ -1,8 +1,9 @@
 require "nvchad.mappings"
 
+local map = vim.keymap.set
+
 -- add yours here
 
-local map = vim.keymap.set
 
 -- Basic mappings
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -12,18 +13,6 @@ map("i", "jk", "<ESC>")
 map("n", "<leader>vs", "<cmd>VenvSelect<cr>", { desc = "Python: Select VirtualEnv" })
 map("n", "<leader>vc", "<cmd>VenvSelectCached<cr>", { desc = "Python: Select Cached VirtualEnv" })
 
--- Testing
-map("n", "<leader>tt", function() require("neotest").run.run() end, { desc = "Test: Run Nearest" })
-map("n", "<leader>tT", function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Test: Run File" })
-map("n", "<leader>ts", function() require("neotest").summary.toggle() end, { desc = "Test: Toggle Summary" })
-map("n", "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, { desc = "Test: Show Output" })
-map("n", "<leader>tO", function() require("neotest").output_panel.toggle() end, { desc = "Test: Toggle Output Panel" })
-map("n", "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end, { desc = "Test: Debug Nearest" })
-map("n", "<leader>tS", function() require("neotest").run.stop() end, { desc = "Test: Stop" })
-map("n", "<leader>ta", function() require("neotest").run.attach() end, { desc = "Test: Attach" })
-map("n", "<leader>tc", "<cmd>Coverage<cr>", { desc = "Test: Show Coverage" })
-map("n", "<leader>tC", "<cmd>CoverageClear<cr>", { desc = "Test: Clear Coverage" })
-map("n", "<leader>tl", "<cmd>CoverageLoad<cr>", { desc = "Test: Load Coverage" })
 
 -- Jupyter Notebook (Molten)
 map("n", "<leader>mi", "<cmd>MoltenInit<cr>", { desc = "Molten: Init Kernel" })
@@ -42,16 +31,6 @@ map("n", "<leader>ms", "<cmd>MoltenRestart<cr>", { desc = "Molten: Restart Kerne
 -- <leader>ac - Opencode with Selection (defined in plugins/ai.lua)
 -- <Tab> - Accept Supermaven suggestion (defined in plugins/ai.lua)
 
--- Git (Neogit and Diffview)
-map("n", "<leader>gn", "<cmd>Neogit<cr>", { desc = "Neogit: Open" })
-map("n", "<leader>gc", "<cmd>Neogit commit<cr>", { desc = "Neogit: Commit" })
-map("n", "<leader>gp", "<cmd>Neogit push<cr>", { desc = "Neogit: Push" })
-map("n", "<leader>gl", "<cmd>Neogit pull<cr>", { desc = "Neogit: Pull" })
-map("n", "<leader>gb", "<cmd>Neogit branch<cr>", { desc = "Neogit: Branch" })
-map("n", "<leader>gd", "<cmd>DiffviewOpen<cr>", { desc = "Diffview: Open" })
-map("n", "<leader>gq", "<cmd>DiffviewClose<cr>", { desc = "Diffview: Close" })
-map("n", "<leader>gh", "<cmd>DiffviewFileHistory<cr>", { desc = "Diffview: File History" })
-map("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { desc = "Diffview: Current File History" })
 
 -- Diagnostics (Trouble)
 map("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Trouble: Diagnostics (All)" })
@@ -71,23 +50,3 @@ map("n", "<leader>tD", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", { desc = 
 map("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find Todo" })
 map("n", "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", { desc = "Find Todo/Fix/Fixme" })
 
--- Noice
-map("c", "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, { desc = "Redirect Cmdline" })
-map("n", "<leader>nl", function() require("noice").cmd("last") end, { desc = "Noice: Last Message" })
-map("n", "<leader>nh", function() require("noice").cmd("history") end, { desc = "Noice: History" })
-map("n", "<leader>na", function() require("noice").cmd("all") end, { desc = "Noice: All" })
-map("n", "<leader>nd", function() require("noice").cmd("dismiss") end, { desc = "Noice: Dismiss All" })
-map({ "i", "n", "s" }, "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, { silent = true, expr = true, desc = "Scroll forward" })
-map({ "i", "n", "s" }, "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, { silent = true, expr = true, desc = "Scroll backward" })
-
--- Snacks (additional to those defined in plugins/ui.lua)
-map("n", "<leader>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
-map("n", "<leader>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom Mode" })
-map("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
-map("n", "<leader>bD", function() Snacks.bufdelete.other() end, { desc = "Delete Other Buffers" })
-map("n", "<leader>n", function() Snacks.notifier.show_history() end, { desc = "Notification History" })
-map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Hide All Notifications" })
-map("n", "<leader>ud", function() Snacks.dashboard.open() end, { desc = "Open Dashboard" })
-map("n", "<leader>gG", function() Snacks.lazygit() end, { desc = "Lazygit (Snacks)" })
-map("n", "<leader>gf", function() Snacks.lazygit.log_file() end, { desc = "Lazygit Current File History" })
-map("n", "<leader>gl", function() Snacks.lazygit.log() end, { desc = "Lazygit Log (cwd)" })

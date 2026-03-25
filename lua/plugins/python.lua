@@ -7,26 +7,7 @@ return {
     end,
   },
 
-  -- Python LSP - Pyright
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        pyright = {
-          settings = {
-            python = {
-              analysis = {
-                typeCheckingMode = "basic",
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "openFilesOnly",
-              },
-            },
-          },
-        },
-      },
-    },
-  },
+
 
   -- Virtual Environment Selector
   {
@@ -37,10 +18,7 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     lazy = false,
-    keys = {
-      { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv" },
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Select Cached VirtualEnv" },
-    },
+
     opts = {
       settings = {
         options = {

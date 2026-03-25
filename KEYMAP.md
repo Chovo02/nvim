@@ -181,11 +181,9 @@
 | Key | Mode | Description |
 |-----|------|-------------|
 | `<leader>ai` | n | **Opencode: Open chat** |
-| `<leader>ac` | n,v | **Opencode: Ask with selection** |
-| `<leader>ag` | n | **Opencode: Git review** |
-| `<leader>af` | n | **Opencode: Fix code** |
-| `<leader>ae` | n | **Opencode: Explain code** |
-| `<leader>ad` | n | **Opencode: Generate docs** |
+| `<leader>as` | n,v | **Opencode: Ask with selection** |
+| `<leader>at` | n | **Opencode: Toggle chat** |
+| `<leader>aa` | n | **Opencode: Ask this** |
 
 ---
 
@@ -193,12 +191,12 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>tt` | n | **Test: Run nearest** |
+| `<leader>tt` | n | **Test: Run nearest** (Neotest) |
 | `<leader>tT` | n | **Test: Run file** |
 | `<leader>ts` | n | **Test: Toggle summary window** |
 | `<leader>to` | n | **Test: Show output** |
 | `<leader>tO` | n | **Test: Toggle output panel** |
-| `<leader>td` | n | **Test: Debug nearest test** |
+| `<leader>td` | n | **Test: Debug nearest test** (Neotest) |
 | `<leader>tS` | n | **Test: Stop test run** |
 | `<leader>ta` | n | **Test: Attach to test** |
 | `<leader>tc` | n | **Test: Show coverage** |
@@ -232,10 +230,10 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>gg` | n | **Toggle LazyGit** |
-| `<leader>gG` | n | **Lazygit (via Snacks)** |
-| `<leader>gf` | n | **Lazygit: Current file history** |
-| `<leader>gl` | n | **Lazygit: Log (cwd)** |
+| `<leader>gt` | n | **Toggle LazyGit** (ToggleTerm) |
+| `<leader>sg` | n | **Lazygit** (Snacks) |
+| `<leader>sf` | n | **Lazygit: Current file history** (Snacks) |
+| `<leader>sl` | n | **Lazygit: Log (cwd)** (Snacks) |
 
 ### Neogit (Magit-style Interface)
 
@@ -251,11 +249,11 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>gd` | n | **Diffview: Open** |
-| `<leader>gq` | n | **Diffview: Close** |
-| `<leader>gh` | n | **Diffview: File history** |
-| `<leader>gf` | n | **Diffview: Current file history** |
-| `<leader>gt` | n | **Diffview: Toggle files panel** |
+| `<leader>dv` | n | **Diffview: Open** |
+| `<leader>dq` | n | **Diffview: Close** |
+| `<leader>dh` | n | **Diffview: File history** |
+| `<leader>df` | n | **Diffview: Current file history** |
+| `<leader>dt` | n | **Diffview: Toggle files panel** |
 
 ---
 
@@ -299,9 +297,9 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>tt` | n | **Toggle floating terminal** |
-| `<leader>th` | n | **Toggle horizontal terminal** |
-| `<leader>tv` | n | **Toggle vertical terminal** |
+| `<leader>ft` | n | **Toggle floating terminal** |
+| `<leader>fh` | n | **Toggle horizontal terminal** |
+| `<leader>fv` | n | **Toggle vertical terminal** |
 | `<C-\>` | n,i | **Toggle terminal** |
 
 ### Overseer (Task Runner)
@@ -318,7 +316,7 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>ld` | n | **Toggle LazyDocker** |
+| `<leader>gd` | n | **Toggle LazyDocker** |
 
 ---
 
@@ -380,10 +378,10 @@
 
 | Key | Mode | Description |
 |-----|------|-------------|
-| `<leader>td` | n | **Todo (Trouble)** |
-| `<leader>tD` | n | **Todo/Fix/Fixme (Trouble)** |
-| `<leader>ft` | n | **Find Todo (Telescope)** |
-| `<leader>fT` | n | **Find Todo/Fix/Fixme** |
+| `<leader>ttd` | n | **Todo (Trouble)** |
+| `<leader>ttD` | n | **Todo/Fix/Fixme (Trouble)** |
+| `<leader>ftd` | n | **Find Todo (Telescope)** |
+| `<leader>ftD` | n | **Find Todo/Fix/Fixme** |
 
 ---
 

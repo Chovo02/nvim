@@ -28,16 +28,7 @@ return {
         },
       })
     end,
-    keys = {
-      { "<leader>tt", function() require("neotest").run.run() end, desc = "Test: Run Nearest" },
-      { "<leader>tT", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Test: Run File" },
-      { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Test: Toggle Summary" },
-      { "<leader>to", function() require("neotest").output.open({ enter = true, auto_close = true }) end, desc = "Test: Show Output" },
-      { "<leader>tO", function() require("neotest").output_panel.toggle() end, desc = "Test: Toggle Output Panel" },
-      { "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Test: Debug Nearest" },
-      { "<leader>tS", function() require("neotest").run.stop() end, desc = "Test: Stop" },
-      { "<leader>ta", function() require("neotest").run.attach() end, desc = "Test: Attach" },
-    },
+
   },
 
   -- Neotest Python Adapter
@@ -64,10 +55,6 @@ return {
         },
       })
     end,
-    keys = {
-      { "<leader>tc", "<cmd>Coverage<cr>", desc = "Test: Show Coverage" },
-      { "<leader>tC", "<cmd>CoverageClear<cr>", desc = "Test: Clear Coverage" },
-      { "<leader>tl", "<cmd>CoverageLoad<cr>", desc = "Test: Load Coverage" },
-    },
+
   },
 }

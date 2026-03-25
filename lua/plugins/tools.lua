@@ -4,13 +4,7 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     cmd = { "ToggleTerm", "LazyGit", "LazyDocker" },
-    keys = {
-      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "Toggle Lazygit" },
-      { "<leader>ld", "<cmd>LazyDocker<cr>", desc = "Toggle Lazydocker" },
-      { "<leader>tt", "<cmd>ToggleTerm direction=float<cr>", desc = "Toggle Floating Terminal" },
-      { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Toggle Horizontal Terminal" },
-      { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", desc = "Toggle Vertical Terminal" },
-    },
+
     config = function()
       require("toggleterm").setup({
         size = function(term)
@@ -61,12 +55,8 @@ return {
         end,
       })
 
-      function _lazygit_toggle()
-        lazygit:toggle()
-      end
-
       vim.api.nvim_create_user_command("LazyGit", function()
-        _lazygit_toggle()
+        lazygit:toggle()
       end, {})
 
       -- Lazydocker terminal
@@ -85,12 +75,8 @@ return {
         end,
       })
 
-      function _lazydocker_toggle()
-        lazydocker:toggle()
-      end
-
       vim.api.nvim_create_user_command("LazyDocker", function()
-        _lazydocker_toggle()
+        lazydocker:toggle()
       end, {})
     end,
   },

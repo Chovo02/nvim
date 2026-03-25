@@ -2,7 +2,8 @@ return {
   -- Jupytext - Convert ipynb to Python
   {
     "GCBallesteros/jupytext.nvim",
-    lazy = false,
+    lazy = true,
+    ft = { "jupyter", "python" },
     opts = {
       style = "hydrogen",
       output_extension = "auto",
@@ -18,7 +19,8 @@ return {
     lazy = true,
     ft = { "python", "jupyter", "markdown" },
     opts = {
-      backend = "kitty", -- WezTerm supports Kitty Graphics Protocol
+      -- backend = "kitty", -- WezTerm supports Kitty Graphics Protocol
+      -- Rimosso per evitare dipendenze da terminale specifico, usare il default o configurare in base all'ambiente
       integrations = {
         markdown = {
           enabled = true,
