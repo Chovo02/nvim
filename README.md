@@ -1,46 +1,34 @@
-# ⚡ NvChad - Configurazione Personale
+# AstroNvim Template
 
-Configurazione Neovim basata su [NvChad](https://nvchad.com) per sviluppo Python e workflow ottimizzato.
+**NOTE:** This is for AstroNvim v5+
 
-## Requisiti
+A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-- Neovim ≥ 0.9
-- Git, ripgrep, fd
-- Node.js (per LSP)
-- Python 3
+## 🛠️ Installation
 
-## Installazione
+#### Make a backup of your current nvim and shared folder
 
-```bash
-# Backup configurazione esistente
-mv ~/.config/nvim ~/.config/nvim.backup
+```shell
+mv ~/.config/nvim ~/.config/nvim.bak
+mv ~/.local/share/nvim ~/.local/share/nvim.bak
+mv ~/.local/state/nvim ~/.local/state/nvim.bak
+mv ~/.cache/nvim ~/.cache/nvim.bak
+```
 
-# Clone
-git clone <repo-url> ~/.config/nvim
+#### Create a new user repository from this template
 
-# Avvia Neovim (Lazy installerà automaticamente i plugin)
+Press the "Use this template" button above to create a new repository to store your user configuration.
+
+You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
+
+#### Clone the repository
+
+```shell
+git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
+```
+
+#### Start Neovim
+
+```shell
 nvim
 ```
-
-## Struttura
-
-```
-lua/
-├── plugins/          # Plugin organizzati per categoria
-│   ├── ai.lua       # AI assistants
-│   ├── python.lua   # Python dev tools
-│   ├── notebook.lua # Jupyter integration
-│   ├── git.lua      # Git workflow
-│   └── ...
-├── configs/         # Configurazioni LSP, formatter
-├── mappings.lua     # Keymaps personalizzati
-└── options.lua      # Opzioni Neovim
-```
-
-## Keymaps
-
-Vedi [KEYMAP.md](./KEYMAP.md) per la lista completa delle scorciatoie.
-
----
-
-_Configurazione personale - liberamente ispirata da [LazyVim starter](https://github.com/LazyVim/starter)_

@@ -1,47 +1,27 @@
 return {
-  -- Treesitter Python
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, { "python", "toml" })
-    end,
-  },
-
-
-
-  -- Virtual Environment Selector
   {
     "linux-cultist/venv-selector.nvim",
-    dependencies = {
-      "neovim/nvim-lspconfig",
-      "mfussenegger/nvim-dap-python",
-      "nvim-telescope/telescope.nvim",
-    },
-    lazy = false,
-
+    dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
     opts = {
-      settings = {
-        options = {
-          notify_user_on_venv_activation = true,
-        },
-        search = {
-          anaconda = { enable = false },
-          miniconda = { enable = false },
-        },
-      },
+      name = { "venv", ".venv", "env", ".env" },
+      auto_refresh = true,
+    },
+    keys = {
+      { "<leader>pv", "<cmd>VenvSelect<cr>", desc = "Select VirtualEnv" },
+      { "<leader>pc", "<cmd>VenvSelectCurrent<cr>", desc = "Show current VirtualEnv" },
     },
   },
-
-  -- Mason tool installer for Python tools
   {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = {
-        "pyright",
-        "ruff",
-        "debugpy",
-      },
+    "mfussenegger/nvim-dap-python",
+    dependencies = { "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui" },
+    ft = "python",
+    config = function()
+      -- Usa il debugpy del venv corrente o quello di mason
+      require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+    end,
+    keys = {
+      { "<leader>dPt", function() require("dap-python").test_method() end, desc = "Debug test method" },
+      { "<leader>dPc", function() require("dap-python").test_class() end, desc = "Debug test class" },
     },
   },
 }
